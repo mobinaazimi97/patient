@@ -31,7 +31,7 @@ public class Appointment {
 //    @JoinColumn(name = "patient_id")
 //    private Patient patient;
 
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
