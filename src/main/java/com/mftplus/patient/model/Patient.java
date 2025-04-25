@@ -45,7 +45,4 @@ public class Patient {
     @Column(name = "deleted")
     private boolean deleted = false;
 
-    @OneToMany(mappedBy = "patient",fetch = FetchType.EAGER)
-//    @JoinTable(name = "Patient_Appointment")
-    private List<Appointment> appointments;
 }

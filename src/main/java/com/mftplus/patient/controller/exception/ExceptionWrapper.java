@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 public class ExceptionWrapper {
     public static String getMessage(Exception e) {
+        System.out.println(e.getMessage());
         if(e instanceof NoContentException){
             return "محتوایی وجود ندارد";
         }else if(e instanceof SQLException){

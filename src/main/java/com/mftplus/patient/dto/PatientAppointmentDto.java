@@ -35,16 +35,15 @@ public class PatientAppointmentDto {
     }
 
 
-    public Appointment getAppointment() throws JsonProcessingException {
-        return Appointment.builder().appointmentId(appointmentId).startDateTime(startDateTime).endDateTime(endDateTime).patient(getPatient()).build();
-    }
-    public Patient getPatient() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        List<Appointment> appointmentList = mapper.readValue(
-                appointmentService.getAppointmentByPatientId(patientId).getBody(),
-                new TypeReference<List<Appointment>>() {}
-        );
+//    public List<Appointment> getAppointments() throws JsonProcessingException {
+//        ObjectMapper mapper = new ObjectMapper();
+//        return mapper.readValue(
+//                appointmentService.getAppointmentByPatientId(patientId).getBody(),
+//                new TypeReference<List<Appointment>>() {}
+//        );
+//    }
 
-        return Patient.builder().patientId(patientId).firstName(firstName).lastName(lastName).appointments(appointmentList).build();
-    }
+//    public Patient getPatient() throws JsonProcessingException {
+//        return Patient.builder().patientId(patientId).firstName(firstName).lastName(lastName).appointments(getAppointments()).build();
+//    }
 }
