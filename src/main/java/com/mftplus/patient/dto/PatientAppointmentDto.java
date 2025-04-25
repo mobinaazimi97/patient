@@ -16,7 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@Component
+//@Component
 public class PatientAppointmentDto {
     private Long patientId;
     private String firstName;

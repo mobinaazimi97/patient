@@ -7,12 +7,14 @@ import com.mftplus.patient.service.PatientService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
 @SpringBootApplication
-@Component
+@EnableFeignClients
+//@Component
 public class PatientApplication implements CommandLineRunner {
 private final PatientService patientService;
     private final AppointmentRepository appointmentRepository;
@@ -31,6 +33,7 @@ private final PatientService patientService;
     public void run(String... args) throws Exception {
 
         Patient patient= Patient.builder().firstName("mmm").lastName("xxx").deleted(false).build();
+        patientService.save(patient);
         Appointment appointment=Appointment.builder().patient(patient).startDateTime(LocalDateTime.now()).endDateTime(LocalDateTime.now().plusDays(2)).build();
         appointmentRepository.save(appointment);
     }
