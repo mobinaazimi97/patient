@@ -19,6 +19,7 @@ import java.util.List;
 @Service
 @Slf4j
 public class PatientService {
+
     private final PatientRepository patientRepository;
     private final AppointmentRepository appointmentRepository;
     private final AppointmentServiceMicro appointmentServiceMicro;
@@ -41,7 +42,7 @@ public class PatientService {
 //    @CacheEvict(cacheNames = "patients", allEntries = true)
     public void save(Patient patient) throws JsonProcessingException, NoContentException {
 
-        ResponseEntity<String>response=appointmentServiceMicro.postAppointment(patient.getAppointments().get(0));
+        ResponseEntity<String> response=appointmentServiceMicro.postAppointment(patient.getAppointments().get(0));
         if (response.getStatusCode().equals(HttpStatus.OK)){
             ObjectMapper mapper=new ObjectMapper();
 

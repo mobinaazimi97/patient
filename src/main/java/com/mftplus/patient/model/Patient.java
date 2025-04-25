@@ -24,6 +24,7 @@ import java.util.List;
 @SQLRestriction("deleted = false")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "patientId")
 public class Patient {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "patientId")
@@ -47,6 +48,4 @@ public class Patient {
     @OneToMany(mappedBy = "patient",fetch = FetchType.EAGER)
 //    @JoinTable(name = "Patient_Appointment")
     private List<Appointment> appointments;
-
-
 }
