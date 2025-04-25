@@ -1,5 +1,6 @@
 package com.mftplus.patient.repository;
 
+import com.mftplus.patient.model.Patient;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

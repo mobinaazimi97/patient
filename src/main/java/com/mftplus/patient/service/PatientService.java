@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mftplus.patient.controller.exception.NoContentException;
 import com.mftplus.patient.model.Appointment;
+import com.mftplus.patient.model.Patient;
 import com.mftplus.patient.repository.AppointmentRepository;
 import com.mftplus.patient.repository.PatientRepository;
 import jakarta.annotation.PostConstruct;

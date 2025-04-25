@@ -23,6 +23,7 @@ public class Appointment {
 //    @Column(name = "appointment_id")
     private Long appointmentId;
 
+//    @JsonIgnore
     @Column(name = "deleted")
     private boolean deleted;
 
