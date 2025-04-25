@@ -19,7 +19,7 @@ public interface AppointmentServiceMicro {
     @GetMapping("/appointments")
     ResponseEntity<String> getAppointments();
 
-    @GetMapping("/appointments/{id}")
+    @GetMapping("/appointments/{appointmentId}")
     ResponseEntity<String> getAppointmentById(@PathVariable("appointmentId") Long appointmentId);
 
     @GetMapping("/appointments/patients/{patientId}")
